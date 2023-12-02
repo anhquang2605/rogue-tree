@@ -19,5 +19,5 @@ export type Tree = {
     background: string;//image url or hex color
     levelPoints: Number[];//points allocation for each level, can be changed later
     isPresenting: boolean;//if the tree is currently being presented
-    
+    currentUnlockedId: string | ObjectId;//the id of the node that is unlocked meaning we tarverse the tree from root to this node, this is how we save the progress
 }
