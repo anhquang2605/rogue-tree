@@ -7,7 +7,7 @@ export type TreeNode = {
     icon: string;
     nodeColor: string; //hex color
     cost: number; //cost to unlock, default to 1
-
+    level: number; //level of the node, default to 0
 }
 export type Tree = {
     _id: string | ObjectId;
