@@ -11,7 +11,8 @@ export default function AuthenticationBanner(props: AuthenticationBannerProps) {
     } = props;
    
     return (
-        <div className={"d-flex flex-column  col-6 justify-content-center align-items-center " + styles['authentication-banner']}>
+        <div className={"rounded-start-4 d-flex flex-column  col-6 justify-content-center align-items-center " + styles['authentication-banner']}>
+            <PiTreeLight className={styles['authentication-banner-icon']}/>
             <h1 className="text-center">
                 {currentForm === "signIn" ? "Welcome to Rogue Tree" : "Let's create your account and start building your trees!"}
             </h1>
