@@ -32,11 +32,14 @@ export default function SignInForm(props: SignInFormProps) {
     }
 
     return (
-        <form className="p-4">
+        <div className="p-4">
+            <h3 className="form-title w-full mb-4">
+                Sign In
+            </h3>
             <label className="form-label" htmlFor="email">Username</label>
-            <input className="form-control" type="email" id="email" name="email" />
+            <input className="form-control p-4" type="email" id="email" name="email" />
             <label className="form-label" htmlFor="password">Password</label>
-            <input className="form-control" type="password" id="password" name="password" />
+            <input className="form-control p-4" type="password" id="password" name="password" />
             <div className="form-check">
                 <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
                 <label className="form-check-label" htmlFor="flexCheckDefault">
@@ -49,6 +52,6 @@ export default function SignInForm(props: SignInFormProps) {
                     onSignUpClick
                 } className="btn btn-warning">Sign Up</button>
             </div>
-        </form>
+        </div>
     )
 }

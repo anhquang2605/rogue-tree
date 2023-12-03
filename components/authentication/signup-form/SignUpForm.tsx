@@ -35,7 +35,7 @@ interface SignUpFormProps {
 import React, { useState, useEffect, ChangeEvent } from 'react'
 import bcrypt from 'bcryptjs';
 import ApiStatusPop from '../../api-status-pop/apistatuspop';
-import style from './register.module.css';
+import style from './signup-form.module.css';
 const API_PREFFIX = "/api";
 const PW_LENGTH = 8;
 interface SignUpFormProps {
@@ -212,49 +212,53 @@ export default function SignUpForm(props: SignUpFormProps) {
     return (
         <>
             <ApiStatusPop  redirectPageName='Login' redirectDuration={3} status={apiStatus} setApiStatus={setApiStatus} show={showAPIPop} setReveal={setShowAPIPop}redirectButtonText='Go to Login Page' redirect="/authentication/login"/>
-            <div className={"glass flex flex-col " + style['form-container']}>
-                <div className="form-container flex-row w-3/5 my-auto mx-auto">
-                    <h3 className="form-title w-full">
-                        Register
+            <div className={"flex flex-col p-4 " + style['form-container']}>
+                <div className="form-container flex-row">
+                    <h3 className="form-title w-full mb-4">
+                        Sign Up
                     </h3>
-                    <div className="lg:half form-row lg:mr-4 w-full mr-0">
-                        <label>
+          
+                        <label className="form-label">
                             Username
                         </label>
-                        <input type="text" className={"p-4 border rounded border w-full "+ (validUsername ? "" : " border-red-400")} placeholder="Username" value={username} onChange={handleUsernameChange} onBlur={()=>{
+                        <input  type="text" className={"form-control p-4 rounded w-full "+ (validUsername ? "" : " border-red-400")} placeholder="Username" value={username} onChange={handleUsernameChange} onBlur={()=>{
                             validateUsername()
                             validateUsernameExists()
                         }} />
                         {<p className={"text-red-400 " + (validUsername && "opacity-0")}>{!usernameLength ? "Username must be at least 5 characters long" : ""} {usernameExists&&"Username already existed!"}</p>}
-                    </div>
-                    <div className="form-row lg:half lg:mr-4 w-full mr-0">
-                        <label>
+
+
+                        <label className="form-label">
                             Password
                         </label>
-                        <input type="password" value={password} className={"p-4 border rounded self-start border w-full"+ (validPassword ? "" : " border-red-400")} placeholder="Password" onChange={handlePasswordChange} onBlur={()=>{
+                        <input type="password" value={password} className={"form-control p-4 rounded self-start border w-full"+ (validPassword ? "" : " border-red-400")} placeholder="Password" onChange={handlePasswordChange} onBlur={()=>{
                                 validatePassword()
                             }}/>
-                        <ul className={"" + (validPassword && "opacity-0")}>
-                            Password must contain:
-                            <li className={"text-red-400 " + (passwordLength && "line-through")}>At least 5 characters</li>
-                        </ul>
+
+                            <p className={"text-red-400 " + (passwordLength && "line-through")}>Password must have at least 5 characters</p>
+                        
                     
-                    </div>
-                    <div className="form-row lg:half w-full">
-                        <label>
+                        <label className="form-label">
                             Confirm Password
                         </label>
-                        <input type="password" value={confirmPassword}  className={"p-4 border rounded "+ (validPasswordMatch ? "" : "border-red-400")} placeholder="Retype password to confirm" onChange={handleConfirmPasswordChange} onBlur={()=>{
+                        <input type="password" value={confirmPassword}  className={" form-control p-4 border rounded "+ (validPasswordMatch ? "" : "border-red-400")} placeholder="Retype password to confirm" onChange={handleConfirmPasswordChange} onBlur={()=>{
                                 validatePasswordMatch()
                                 validatePassword()
                             }} />
                             {<p className={"text-red-400 " + (validPasswordMatch && "opacity-0")}>Passwords do not match!</p>}
-                    </div>
+
 
                   
 
-                   
-                    <button onClick={handleSubmit} className="action-btn w-full">Register</button>
+                   <div className="group-of-btns">
+                        <button onClick={handleSubmit} className="btn btn-success mr-4">Create Account</button>
+                            <button className="btn btn-primary" onClick={
+                                onGoToSignInClick
+                            }>
+                                Go to Sign In
+                            </button>
+                   </div>
+
                 </div>
                 
             </div>
