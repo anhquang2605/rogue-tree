@@ -1,3 +1,5 @@
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
 /* Global CSS variables */
 
 :root {
@@ -9,18 +11,9 @@
   --main-gradient: linear-gradient(45deg, rgba(171,60,5,1) 17%, rgba(0,168,126,1) 100%);
 }
 .dark{
-  --main-bg-color: rgb(39, 39, 46);
-  --secondary-bg-color: rgb(59, 59, 70);
-  --main-text-color: rgb(198, 198, 199);
+  --main-bg-color: rgb(39, 39, 46)!important;
+  --secondary-bg-color: rgb(59, 59, 70)!important;
+  --main-text-color: rgb(198, 198, 199)!important;
 }
 
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
