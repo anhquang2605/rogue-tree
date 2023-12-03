@@ -17,4 +17,8 @@ export interface UserInSession{
     image?: string | null | undefined; 
     location?: Location | null | undefined;
     remember?: boolean,
+    fontSize?: number,
+    themePrefered?: string,
+    soundEffectON?: boolean,
+    startUpPagePreference?: string
 }

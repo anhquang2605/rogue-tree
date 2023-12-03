@@ -14,6 +14,10 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
                 if(match) {
                     const data: UserInSession = pick(user, [
                         "username",
+                        "fontSize",
+                        "themePreferered",
+                        "soundEffectON",
+                        "startUpPagePreference"
                     ])
                     res.status(200).json({
                         type: "success",

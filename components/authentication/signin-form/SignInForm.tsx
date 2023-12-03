@@ -50,7 +50,7 @@ export default function SignInForm(props: SignInFormProps) {
                 <button onClick={onSignInClick} className="btn btn-primary me-4" type="submit">Sign In</button>
                 <button onClick={
                     onSignUpClick
-                } className="btn btn-warning">Sign Up</button>
+                } className="btn btn-success">Sign Up</button>
             </div>
         </div>
     )

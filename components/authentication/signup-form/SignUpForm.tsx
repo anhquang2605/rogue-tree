@@ -221,7 +221,7 @@ export default function SignUpForm(props: SignUpFormProps) {
                         <label className="form-label">
                             Username
                         </label>
-                        <input  type="text" className={"form-control p-4 rounded w-full "+ (validUsername ? "" : " border-red-400")} placeholder="Username" value={username} onChange={handleUsernameChange} onBlur={()=>{
+                        <input  type="text" className={"form-control p-4 rounded w-full "+ (validUsername ? "" : " border-red-400")}  value={username} onChange={handleUsernameChange} onBlur={()=>{
                             validateUsername()
                             validateUsernameExists()
                         }} />
@@ -231,7 +231,7 @@ export default function SignUpForm(props: SignUpFormProps) {
                         <label className="form-label">
                             Password
                         </label>
-                        <input type="password" value={password} className={"form-control p-4 rounded self-start border w-full"+ (validPassword ? "" : " border-red-400")} placeholder="Password" onChange={handlePasswordChange} onBlur={()=>{
+                        <input type="password" value={password} className={"form-control p-4 rounded self-start border w-full"+ (validPassword ? "" : " border-red-400")}  onChange={handlePasswordChange} onBlur={()=>{
                                 validatePassword()
                             }}/>
 

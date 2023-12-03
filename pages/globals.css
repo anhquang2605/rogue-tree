@@ -5,15 +5,56 @@
 :root {
   --primary-color: rgb(0, 119, 119);
   --secondary-color: rgb(1, 150, 150);
-  --main-bg-color: rgb(228, 225, 225);
-  --secondary-bg-color: rgb(231, 230, 230);
+  --main-bg-color: rgb(241, 238, 238);
+  --secondary-bg-color: rgb(197, 197, 197);
   --main-text-color: rgb(39, 39, 46);
   --main-gradient: linear-gradient(45deg, rgba(171,60,5,1) 17%, rgba(0,168,126,1) 100%);
+  --secondary-text-color: rgb(84, 84, 99);
+  --transition: all 0.2s ease-in-out;
 }
 .dark{
-  --main-bg-color: rgb(39, 39, 46)!important;
-  --secondary-bg-color: rgb(59, 59, 70)!important;
-  --main-text-color: rgb(198, 198, 199)!important;
+  --main-bg-color: rgb(39, 39, 46);
+  --secondary-bg-color: rgb(84, 84, 99);
+  --third-bg-color: rgb(117, 117, 138);
+  --main-text-color: rgb(231, 231, 231);
+  --secondary-text-color: rgb(197, 197, 197);
+}
+body{
+  background-color: var(--main-bg-color);
+  color: var(--main-text-color);
+}
+
+input[type="text"], input[type="email"], input[type="password"]{
+  background-color: var(--secondary-bg-color);
+  color: var(--main-text-color);
+}
+input:focus{
+    color: var(--main-text-color)!important;
+    background-color: var(--third-bg-color)!important;
+}
+input::placeholder{
+  color: var(--secondary-text-color)!important;
+}
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  color: var(--secondary-text-color);
+}
+
+input::-moz-placeholder, textarea::-moz-placeholder {
+  /* Firefox 19+ */
+  color: var(--secondary-text-color);
+  opacity: 1;
+}
+
+input:-ms-input-placeholder, textarea:-ms-input-placeholder {
+  /* IE 10+ */
+  color: var(--secondary-text-color);
+}
+
+input:-moz-placeholder, textarea:-moz-placeholder {
+  /* Firefox 18- */
+  color: var(--secondary-text-color);
+  opacity: 1;
 }
 
 

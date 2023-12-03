@@ -1,0 +1,21 @@
+.theme-change-btn{
+    @apply border border-slate-50 w-1/6;
+}
+.active{
+    
+}
+.non-active{
+
+}
+.dark.active{
+    background: rgb(46, 0, 130);
+    color: white;
+}
+
+.light.active{
+    background: gold;
+    color: rgb(88, 88, 88);
+}
+.light.non-active{
+    color: white;
+}

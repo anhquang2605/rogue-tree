@@ -4,9 +4,10 @@ import './globals.css';
 import Layout from '@/components/layout';
 import {SessionProvider} from 'next-auth/react';
 import { useRouter } from 'next/router';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 export default function MyApp({ Component, pageProps:{session, ...pageProps} }: AppProps) {
   const router = useRouter();
+  const [currentTheme, setCurrentTheme] = useState("light");
   useEffect(() => {
     if(!session) {
       router.push("/authentication");
