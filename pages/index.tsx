@@ -1,6 +1,6 @@
 export default function Home() {
     return(
-        <main className="dark">
+        <main className="">
             <h1>Home</h1>
             <p>
                 This is the home page.    
