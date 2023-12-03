@@ -1,5 +1,10 @@
 .theme-change-btn{
-    @apply border border-slate-50 w-1/6;
+    @apply border;
+    border: 1px solid var(--secondary-bg-color);
+    width: 11rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .active{
     
@@ -11,11 +16,14 @@
     background: rgb(46, 0, 130);
     color: white;
 }
+.dark.non-active{
+    color: gray;
 
+}
 .light.active{
-    background: gold;
-    color: rgb(88, 88, 88);
+    background: rgb(226, 192, 1);
+    color: rgb(255, 255, 255);
 }
 .light.non-active{
-    color: white;
+    color: gray;
 }
