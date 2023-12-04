@@ -18,7 +18,6 @@ export async function connectDB() {
     try{
         if(db) return db;
         await client.connect();
-        // Send a ping to confirm a successful connection
         db = await client.db(DB);  
         return db;
     } catch (e) {
