@@ -144,13 +144,12 @@ export default function SignUpForm(props: SignUpFormProps) {
         }
     }
     const validateUsernameExists = async () => {
-        const response = await fetch(API_PREFFIX + "/user-by-name/?username=" + username);
+        const response = await fetch(API_PREFFIX + "/users/exist?username=" + username);
         const data = await response.json();
-        const existingUser = data.user;
-        if (existingUser) {
-            setUsernameExists(true)
-        } else {
-            setUsernameExists(false)
+        if(data.success){
+            setUsernameExists(data.exists)
+        }else{
+            console.log(data.message)
         }
     }
     
